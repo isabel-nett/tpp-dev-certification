@@ -1,0 +1,210 @@
+:root {
+    --tpp-orange:rgb(248, 150, 31);
+    --tpp-red:rgb(239, 65, 54);
+    --tpp-purple:rgb(70, 83, 130);
+    --tpp-black:rgb(0, 0, 0);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: url("..src/images/TPP_logo_reversed_icon.jpg"), linear-gradient(120deg, var(--tpp-black), var(--tpp-purple));
+    background-position: 0 0;
+    place-content: center;
+    place-items: center;
+}
+
+.header {
+    padding: 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    height: 20vh;
+}
+
+.header-logo-container {
+    grid-column: span 4;
+}
+
+.logo {
+    width: 100%;
+    height: 15%;
+    object-fit: cover; 
+    object-position: 0 50%;
+    overflow: hidden;
+}
+
+.line-container {
+    grid-column: span 1;
+}
+
+.header-line {
+    margin-top: 20px;
+    width: 50px;
+    left: 390px;
+    border: 1px solid var(--tpp-purple);
+    transform: rotate(90deg);
+}
+
+.page-title {
+    padding-top: 3px;
+    grid-column: span 10;
+    color: var(--tpp-orange);
+    font-weight: lighter;
+    font-size: 20pt;
+}
+
+.content-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.progress-marker {
+    grid-column: 2 / span 3;
+    margin: 0 auto;
+    padding-top: 150px;
+    padding-bottom: 20px;
+}
+
+.step {
+    display: flex;
+    font-weight: bolder;
+}
+
+.step-label {
+    color: white;
+    font-size: 18pt;
+    padding-left: 15px;
+    padding-top: 2px;
+}
+
+.cards {
+    grid-column: 6 / span 6;
+}
+
+.card {
+    margin-bottom: 2rem;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 24px #282F48;
+    min-height: 450px;
+}
+
+.card-body {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+}
+
+.card-title {
+    font-size: 20pt;
+    font-weight: bolder;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.card-text {
+    font-weight: light;
+    font-size: 12pt;
+    padding-bottom: 80px;
+}
+
+.card-text a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.card-text small {
+    color: var(--tpp-purple);
+}
+
+.arrow {
+    margin: 5rem 47.5%;
+}
+
+.test-grid {
+    margin: 20px auto;
+    padding: 0 10px;
+    grid-template-columns: repeat(10, 1fr);
+    border-bottom: 1px var(--tpp-purple);
+}
+
+
+@media screen and (max-width: 550px) {
+    .header-logo-container {
+        grid-column: 10;
+    }
+
+    .logo {
+        height: 100px;
+        width: 100px;
+        object-fit: fill; 
+    }
+
+    .header-line {
+        margin-top: 70px;
+        width: 150px;
+    }
+
+    .page-title {
+        grid-column: span 12;
+    }
+
+    .content-container {
+        padding: 5vw;
+    }
+
+    .progress-marker {
+        grid-column: 2 / span 10;
+    }
+
+    .cards {
+        grid-column: span 12;
+    }
+
+    .card {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 960px) and (min-width: 550px) {
+    .progress-marker {
+        grid-column: 2 / span 10;
+        padding-top: 50px;
+    }
+
+    .cards {
+        grid-column: 2 / span 10;
+    }
+
+    .card-body {
+        margin-top: 20px;
+    }
+
+    .logo {
+        height: 30%;
+        object-position: 0 45%;
+    }
+
+    .header-line {
+        margin-top: 50px;
+        width: 100px;
+    }
+
+}
+
+@media screen and (max-width: 1400px) {
+    .card-body {
+        display: block;
+        padding: 0 50px;
+    }
+
+    .header-logo-container {
+        grid-column: span 5;
+    }
+
+    .test-grid-data {
+        grid-column: span 10;
+    }
+}
