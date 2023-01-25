@@ -7,10 +7,12 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background: url("..src/images/TPP_logo_reversed_icon.jpg"), linear-gradient(120deg, var(--tpp-black), var(--tpp-purple));
-    background-position: 0 0;
-    place-content: center;
-    place-items: center;
+}
+
+.page {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .header {
@@ -100,7 +102,7 @@ body {
     font-weight: bolder;
     text-align: center;
     padding: 20px;
-    margin-bottom: 40px;
+    margin: 40px 0;
 }
 
 .card-text {
@@ -123,13 +125,24 @@ body {
     margin: 5rem 47.5%;
 }
 
-.test-grid {
+.test-cases {
+    grid-column: span 2;
     margin: 20px auto;
-    padding: 0 10px;
-    grid-template-columns: repeat(10, 1fr);
-    border-bottom: 1px var(--tpp-purple);
 }
 
+.test-grid {
+    padding: 0 10px;
+    /* grid-template-columns: repeat(10, 1fr);
+    border-bottom: 1px var(--tpp-purple); */
+}
+
+.thank-you {
+    margin: 0 auto;
+    padding: 10vh 0;
+    color: white;
+    text-align: center;
+    max-width: 200px;
+}
 
 @media screen and (max-width: 550px) {
     .header-logo-container {
