@@ -9,6 +9,12 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
 .page {
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -111,12 +117,6 @@ body {
     padding-bottom: 80px;
 }
 
-.card-text a {
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-}
-
 .card-text small {
     color: var(--tpp-purple);
 }
@@ -157,9 +157,10 @@ body {
 }
 
 .thank-you {
-    margin: 0 auto;
-    padding: 10vh 0;
-    color: white;
+    border-top: 1px solid var(--tpp-purple);
+    margin: 20px auto;
+    padding: 20px 0;
+    color: var(--tpp-purple);
     text-align: center;
     max-width: 200px;
 }
