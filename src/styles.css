@@ -62,7 +62,7 @@ body {
 .progress-marker {
     grid-column: 2 / span 3;
     margin: 0 auto;
-    padding-top: 150px;
+    padding-top: 200px;
     padding-bottom: 20px;
 }
 
@@ -127,13 +127,33 @@ body {
 
 .test-cases {
     grid-column: span 2;
-    margin: 20px auto;
 }
 
 .test-grid {
-    padding: 0 10px;
-    /* grid-template-columns: repeat(10, 1fr);
-    border-bottom: 1px var(--tpp-purple); */
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    border-bottom: 1px var(--tpp-purple);
+    margin: 50px;
+}
+
+.test-grid .gr {
+    background: rgb(70, 83, 130, .1);
+}
+
+.table-header {
+    font-weight: bold;
+}
+
+.test-grid .route {
+    grid-column: span 4;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.test-grid .data {
+    grid-column: span 6;
+    padding: 8px;
+    margin-top: 5px;
 }
 
 .thank-you {
@@ -217,7 +237,21 @@ body {
         grid-column: span 5;
     }
 
-    .test-grid-data {
+    .test-grid .route {
         grid-column: span 10;
     }
+
+    .test-grid .data {
+        grid-column: 2 / span 10;
+        margin-bottom: 20px;
+    }
+
+    .table-header {
+        display: none;
+    }
+
+    .test-grid .gr {
+        background: none;
+    }
+
 }
