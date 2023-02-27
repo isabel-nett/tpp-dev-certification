@@ -5,6 +5,10 @@
     --tpp-black:rgb(0, 0, 0);
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -67,14 +71,78 @@ a {
 
 .progress-marker {
     grid-column: 2 / span 3;
-    margin: 0 auto;
-    padding-top: 200px;
-    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: calc(10rem + 40px);
+    position: relative;
 }
 
 .step {
     display: flex;
     font-weight: bolder;
+    width: 250px;
+}
+
+.progress-marker:after {
+    content: '';
+    display: block;
+    width: 3px;
+    background: #fff;
+    height: calc(50% - 10rem);
+    position: absolute;
+    top: calc(50% - 5rem + 40px);
+    left: calc(50% - 105px);
+    transform: translateX(-50%);
+}
+
+.progress-marker:before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: calc(50% + 40px);
+    position: absolute;
+    top: calc(-10rem - 40px);
+    /* transform-origin: bottom bottom; */
+    left: calc(50% - 105px);
+    transform: translateX(-50%);
+    
+}
+
+.progress-marker:before, .progress-marker:after {
+    background: #fff;
+}
+
+.progress-marker:nth-child(1)::before {
+    display: none;
+}
+
+.progress-marker:nth-child(7)::after {
+    display: none;
+}
+
+.progress-marker:nth-child(1)::after {
+    background: rgba(246,149,30,1);
+}
+
+.progress-marker:nth-child(3)::before { 
+    background: linear-gradient(302deg, rgba(70,83,130,1) 22%, rgba(246,149,30,1) 78%);
+}
+
+.progress-marker:nth-child(3)::after { 
+    background: rgba(70,83,130,1)
+}
+
+.progress-marker:nth-child(5)::before { 
+    background: rgba(70,83,130,1)
+}
+
+.progress-marker:nth-child(5)::after { 
+    background: rgba(70,83,130,1)
+}
+
+.progress-marker:nth-child(7)::before { 
+    background: linear-gradient(180deg, rgba(70,83,130,1) 22%, rgba(70,83,130,1) 25%, rgba(246,149,30,1) 100%);
 }
 
 .step-label {
@@ -123,6 +191,7 @@ a {
 
 .arrow {
     margin: 5rem 47.5%;
+    display: block;
 }
 
 .test-cases {
@@ -136,8 +205,24 @@ a {
     margin: 50px;
 }
 
-.test-grid .gr {
-    background: rgb(70, 83, 130, .1);
+.test-grid-data:nth-child(even) {
+    background: #fff9f1;
+}
+
+.table {
+    --bs-table-striped-bg: #fff9f1;
+  }
+
+.table tbody,
+.table tr,
+.table td,
+.table th {
+border: none !important;
+} 
+
+.table  td,
+.table th {
+padding: 20px;
 }
 
 .table-header {
@@ -152,8 +237,7 @@ a {
 
 .test-grid .data {
     grid-column: span 6;
-    padding: 8px;
-    margin-top: 5px;
+    padding: 20px;
 }
 
 .thank-you {
@@ -163,6 +247,15 @@ a {
     color: var(--tpp-purple);
     text-align: center;
     max-width: 200px;
+}
+
+.arrow {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.arrow:hover {
+    transform: scale(1.1);
 }
 
 @media screen and (max-width: 550px) {
@@ -202,7 +295,7 @@ a {
     }
 }
 
-@media screen and (max-width: 960px) and (min-width: 550px) {
+@media screen and (max-width: 960px) and (min-width: 768px) {
     .progress-marker {
         grid-column: 2 / span 10;
         padding-top: 50px;
@@ -255,4 +348,31 @@ a {
         background: none;
     }
 
+}
+
+@media screen and (max-width: 960px) {
+    .progress-marker {
+        padding-bottom: 10px;
+    }
+
+    .progress-marker:before, .progress-marker:after {
+        display: none;
+    }
+
+    .step {
+        justify-content: center;
+    }
+
+    .arrow {
+        margin: 2rem 47.5%;
+    }
+
+    .table  td,
+    .table th {
+    padding: 10px 5px;
+    }
+
+    .table th {
+        font-size: 12px;
+    }
 }
